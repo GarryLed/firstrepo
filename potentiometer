@@ -1,0 +1,26 @@
+int LED=12;
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // read the input on analog pin 0:
+  int knobValue = analogRead(A0);
+   // print out the value you read:
+  Serial.println(knobValue);
+
+  if (knobValue >=400) // turn led on if current value is greatert than 400
+  {
+    digitalWrite(LED, HIGH);
+    delay(500);  // delays for 500 ms
+  } 
+  else 
+  {
+    digitalWrite(LED, LOW); // turn led off if current value is less than 400
+    delay(500); // delays for 500 ms
+  }
+}
